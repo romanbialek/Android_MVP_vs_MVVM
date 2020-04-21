@@ -24,14 +24,11 @@ class MainPresenter: MainContract.Presenter {
                 view.showProgress(false)
                 view.showErrorMessage(error.localizedMessage)
             })
-
         subscriptions.add(subscribe)
-
     }
 
     override fun attach(view: MainContract.View) {
         this.view = view
-        //view.showListFragment() // as default
     }
 
     override fun subscribe() {

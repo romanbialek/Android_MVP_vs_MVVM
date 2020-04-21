@@ -24,11 +24,9 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         setContentView(R.layout.activity_main)
 
         injectDependency()
-        presenter.attach(this)
-        initView()
-
+        setupPresenter()
+        setupUI()
     }
-
 
     private fun injectDependency() {
         val activityComponent = DaggerActivityComponent.builder()
@@ -45,7 +43,11 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         }
     }
 
-    private fun initView() {
+    private fun setupPresenter() {
+        presenter.attach(this)
+    }
+
+    private fun setupUI() {
         presenter.loadEmployees()
     }
 

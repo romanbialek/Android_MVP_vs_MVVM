@@ -10,10 +10,6 @@ object Injection {
     private val employeesDataSource: EmployeesDataSource = EmployeesRepository()
     private val employeesViewModelFactory = ViewModelFactory(employeesDataSource)
 
-    fun providerRepository():EmployeesDataSource{
-        return employeesDataSource
-    }
-
     fun provideViewModelFactory(): ViewModelProvider.Factory{
         return employeesViewModelFactory
     }

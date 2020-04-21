@@ -20,7 +20,6 @@ class ActivityModule (private var activity: Activity) {
         return MainPresenter()
     }
 
-
     @Provides
     fun provideApiService(): ApiClientInterface {
         return ApiClientInterface.create()

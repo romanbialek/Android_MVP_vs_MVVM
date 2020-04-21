@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: EmployeesViewModel
     private lateinit var adapter: EmployeesListAdapter
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -53,20 +52,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val isViewLoadingObserver= Observer<Boolean> {
-        //Log.v(TAG, "isViewLoading $it")
         val visibility=if(it) View.VISIBLE else View.GONE
         progressBar.visibility= visibility
     }
 
     private val onMessageErrorObserver= Observer<Any> {
-        //Log.v(TAG, "onMessageError $it")
         layoutError.visibility= View.VISIBLE
         layoutEmpty.visibility= View.GONE
         textViewError.text= "Error $it"
     }
 
     private val emptyListObserver= Observer<Boolean> {
-       // Log.v(TAG, "emptyListObserver $it")
         layoutEmpty.visibility= View.VISIBLE
         layoutError.visibility= View.GONE
     }
