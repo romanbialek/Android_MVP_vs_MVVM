@@ -1,7 +1,8 @@
-package com.roman.testmvvm
+package com.roman.testmvvm.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.roman.testmvvm.R
 
 class MainActivity : AppCompatActivity() {
 
