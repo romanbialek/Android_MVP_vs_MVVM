@@ -12,6 +12,6 @@ class MainContract  {
     }
 
     interface Presenter: BaseContract.Presenter<View> {
-        fun loadData()
+        fun loadEmployees()
     }
 }
