@@ -1,11 +1,13 @@
 package com.roman.testmvvm.view
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.roman.testmvvm.R
 import com.roman.testmvvm.model.Employee
 
@@ -17,12 +19,14 @@ class EmployeesListAdapter (private var employees:List<Employee>): RecyclerView.
         return MViewHolder(view)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(vh: MViewHolder, position: Int) {
         val employee= employees[position]
 
         //render
-        vh.textViewName.text= employee.full_name
-        vh.
+        vh.textViewName.text = """${employee.first_name} ${employee.last_name}"""
+        vh.textViewEmail.text = employee.email
+        vh.textViewId.text = "(" + employee.id.toString() + ")"
         Glide.with(vh.imageView.context).load(employee.avatar).into(vh.imageView)
     }
 
@@ -37,6 +41,8 @@ class EmployeesListAdapter (private var employees:List<Employee>): RecyclerView.
 
     class MViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val textViewName: TextView = view.findViewById(R.id.tvName)
+        val textViewEmail: TextView = view.findViewById(R.id.tvMail)
+        val textViewId: TextView = view.findViewById(R.id.tvId)
         val imageView: ImageView = view.findViewById(R.id.imageView)
 
     }
