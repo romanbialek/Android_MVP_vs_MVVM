@@ -21,7 +21,6 @@ class EmployeesRepository:EmployeesDataSource {
             override fun onResponse(call: Call<List<Employee>>, response: Response<List<Employee>>) {
                 response.body()?.let {
                     if(response.isSuccessful){
-                        Log.v("TAG", "data ${it.toString()}")
                         callback.onSuccess(it)
                     }else{
                         callback.onError(it.toString())
