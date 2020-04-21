@@ -15,7 +15,7 @@ class MainPresenter: MainContract.Presenter {
 
     override fun loadEmployees() {
 
-        var subscribe = api.getEmployeeList().subscribeOn(Schedulers.io())
+        val subscribe = api.getEmployeeList().subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ list: List<Employee>? ->
                 view.showProgress(false)

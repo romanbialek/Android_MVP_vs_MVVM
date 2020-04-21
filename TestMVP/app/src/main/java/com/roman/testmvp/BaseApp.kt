@@ -2,7 +2,6 @@ package com.roman.testmvp
 
 import android.annotation.SuppressLint
 import android.app.Application
-import com.bumptech.glide.BuildConfig
 import com.roman.testmvp.di.component.ApplicationComponent
 import com.roman.testmvp.di.component.DaggerApplicationComponent
 import com.roman.testmvp.di.module.ApplicationModule

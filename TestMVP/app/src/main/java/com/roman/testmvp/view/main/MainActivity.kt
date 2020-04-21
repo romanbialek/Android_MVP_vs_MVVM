@@ -3,7 +3,6 @@ package com.roman.testmvp.view.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.roman.testmvp.R
 import com.roman.testmvp.di.component.DaggerActivityComponent
@@ -17,7 +16,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
     @Inject
     lateinit var presenter: MainContract.Presenter
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,11 +59,5 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         layoutError.visibility= View.VISIBLE
         layoutEmpty.visibility= View.GONE
         textViewError.text= error
-    }
-
-    private val emptyListObserver= Observer<Boolean> {
-        // Log.v(TAG, "emptyListObserver $it")
-        layoutEmpty.visibility= View.VISIBLE
-        layoutError.visibility= View.GONE
     }
 }

@@ -1,6 +1,5 @@
 package com.roman.testmvp.view.base
 
-
 class BaseContract {
 
     interface Presenter<in T> {
